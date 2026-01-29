@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taschenrechner</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <section class="calculator-container">
+      <div class="calculator-content">
+        <div class="display-box">
+          <div id="former-input" class="display-row1"></div>
+          <div id="current-input" class="display-row2"></div>
+        </div>
+        <div class="grid-container">
+          <button onclick="addNumber(7)" class="grid-item">7</button>
+          <button onclick="addNumber(8)" class="grid-item">8</button>
+          <button onclick="addNumber(9)" class="grid-item">9</button>
+          <button onclick="addOperator(division)" class="grid-item operator">
+            &divide;
+          </button>
+          <button onclick="addNumber(4)" class="grid-item">4</button>
+          <button onclick="addNumber(5)" class="grid-item">5</button>
+          <button onclick="addNumber(6)" class="grid-item">6</button>
+          <button
+            onclick="addOperator(multiplication)"
+            class="grid-item operator"
+          >
+            x
+          </button>
+          <button onclick="addNumber(1)" class="grid-item">1</button>
+          <button onclick="addNumber(2)" class="grid-item">2</button>
+          <button onclick="addNumber(3)" class="grid-item">3</button>
+          <button onclick="addOperator(subtraction)" class="grid-item operator">
+            &minus;
+          </button>
+          <button onclick="resetCalculator()" class="grid-item">CE</button>
+          <button onclick="addNumber(0)" class="grid-item">0</button>
+          <button onclick="calculateResult()" class="grid-item operator">
+            &equals;
+          </button>
+          <button onclick="addOperator(addition)" class="grid-item operator">
+            &plus;
+          </button>
+        </div>
+      </div>
+      <div id="pathway" class="pathway"></div>
+    </section>
+  </body>
+</html>

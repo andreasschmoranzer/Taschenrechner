@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --text--color: #d7d7d7;
+  --primary-color: #424242;
+  --secondary-color: #252525;
+}
+
+body {
+  font-family: "Heebo", sans-serif;
+  font-size: 3rem;
+  background-color: #0f0f0f;
+  color: var(--text--color);
+  overflow: hidden;
+}
+
+.calculator-container {
+  height: 100vh;
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.calculator-content {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  overflow-y: auto;
+}
+
+.display-box {
+  text-align: right;
+  margin-bottom: 1rem;
+  border: 2px solid var(--primary-color);
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.display-row1 {
+  height: 2rem;
+  font-size: 1.2rem;
+}
+
+.display-row2 {
+  height: 4rem;
+  font-size: 3rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 4rem);
+  grid-template-rows: repeat(4, 4rem);
+  place-content: center;
+  grid-gap: 1rem;
+}
+
+.grid-item {
+  border: none;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  font-size: 1.8rem;
+  color: var(--text--color);
+}
+
+.operator {
+  background-color: #da7b06;
+}
+
+.pathway {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  .calculator-container {
+    justify-content: center;
+    gap: 3rem;
+    width: 100vw;
+  }
+
+  .calculator-content {
+    padding: 2rem;
+  }
+
+  .pathway {
+    width: 20%;
+    height: 30rem;
+    font-size: 1rem;
+    text-align: right;
+    display: block;
+    overflow-y: auto;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .calculator-container {
+    gap: 6rem;
+  }
+
+  .display-box {
+    margin-bottom: 2rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(4, 5.5rem);
+    grid-template-rows: repeat(4, 5.5rem);
+    grid-gap: 2rem;
+  }
+
+  .pathway {
+    height: 40rem;
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .calculator {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
