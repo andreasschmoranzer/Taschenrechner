@@ -60,7 +60,7 @@ function calculateResult() {
       result = firstNumber + secondNumber;
       document.getElementById("current-input").innerHTML = result;
     }
-    updatePathway();
+    updateHistory();
     updateFormerInput();
     firstNumber = result;
     secondNumber = 0;
@@ -77,7 +77,7 @@ function resetCalculator() {
   result = "";
   pathway = "";
   updateFormerInput();
-  document.getElementById("pathway").innerHTML = pathway;
+  document.getElementById("history").innerHTML = pathway;
   document.getElementById("current-input").innerHTML =
     firstNumber + operator + secondNumber;
 }
@@ -87,7 +87,7 @@ function updateFormerInput() {
     firstNumber + operator + secondNumber;
 }
 
-function updatePathway() {
+function updateHistory() {
   let pathwayString =
     "<p class='123'>" +
     firstNumber +
@@ -97,5 +97,7 @@ function updatePathway() {
     result +
     "</p>";
   pathway = pathwayString + pathway;
-  document.getElementById("pathway").innerHTML = pathway;
+  document.getElementById("history").innerHTML = pathway;
+  var element = document.getElementById("history");
+  element.classList.add("history-item");
 }
