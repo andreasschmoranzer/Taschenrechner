@@ -98,6 +98,4 @@ function updateHistory() {
     "</p>";
   pathway = pathwayString + pathway;
   document.getElementById("history").innerHTML = pathway;
-  var element = document.getElementById("history");
-  element.classList.add("history-item");
 }
