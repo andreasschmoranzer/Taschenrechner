@@ -26,6 +26,10 @@ body {
   align-items: center;
 }
 
+.calculator-content {
+  width: 80%;
+}
+
 .input-field {
   text-align: right;
   margin-bottom: 1rem;
@@ -46,10 +50,10 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 4.5rem);
-  grid-template-rows: repeat(4, 4.5rem);
-  place-content: center;
-  grid-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  height: 40vh;
+  grid-gap: 0.5rem;
 }
 
 .grid-item {

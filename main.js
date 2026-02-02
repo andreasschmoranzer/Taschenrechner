@@ -49,22 +49,19 @@ function calculateResult() {
   } else if (operator !== "") {
     if (operator === multiplication) {
       result = firstNumber * secondNumber;
-      document.getElementById("current-input").innerHTML = result;
     } else if (operator === division) {
       result = firstNumber / secondNumber;
-      document.getElementById("current-input").innerHTML = result;
     } else if (operator === subtraction) {
       result = firstNumber - secondNumber;
-      document.getElementById("current-input").innerHTML = result;
     } else if (operator === addition) {
       result = firstNumber + secondNumber;
-      document.getElementById("current-input").innerHTML = result;
     }
+    roundNumber();
     updateHistory();
     updateFormerInput();
-    firstNumber = result;
     secondNumber = 0;
     operator = "";
+    console.log(firstNumber, secondNumber);
   }
 }
 
@@ -83,8 +80,14 @@ function resetCalculator() {
 }
 
 function updateFormerInput() {
-  document.getElementById("former-input").innerHTML =
-    firstNumber + operator + secondNumber;
+  const rest = result % 2;
+  if (rest === 0 || rest === 1) {
+    document.getElementById("former-input").innerHTML =
+      firstNumber + operator + secondNumber;
+  } else {
+    document.getElementById("former-input").innerHTML =
+      result.toFixed(2) + operator + secondNumber;
+  }
 }
 
 function updateHistory() {
@@ -98,4 +101,17 @@ function updateHistory() {
     "</p>";
   pathway = pathwayString + pathway;
   document.getElementById("history").innerHTML = pathway;
+}
+
+function roundNumber() {
+  const rest = result % 2;
+  if (rest === 0 || rest === 1) {
+    firstNumber = result;
+    document.getElementById("current-input").innerHTML = result;
+    console.log(result, rest);
+  } else {
+    firstNumber = result;
+    document.getElementById("current-input").innerHTML = result.toFixed(2);
+    console.log(result, firstNumber, result.toFixed(2));
+  }
 }
